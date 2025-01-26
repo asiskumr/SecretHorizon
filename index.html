@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Special Day!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+   
+    <div class="landing-container">
+        <h1>Santhoshi</h1>
+        <p>Let's celebrate together your special day</p>
+        
+        <div id="countdown"></div>
+        <div id="countdown-timer"></div>
+      
+        <button id="enter-button" onclick="openPage()" disabled>Open</button>
+        <p id="warning-message" style="color: red; display: none;">Lol,The surprise will open only on January 28th</p>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <script src="background.js"></script>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        
+        function checkDate() {
+            var today = new Date();
+            var month = today.getMonth(); // 0-based (0 = January)
+            var day =  today.getDate();
+
+         
+            if (month === 0 && day === 28) {  
+                document.getElementById('enter-button').disabled = false;
+            } else {
+                document.getElementById('warning-message').style.display = 'block'; 
+            }
+        }
+
+       
+        function openPage() {
+            window.location.href = 'main.html';
+        }
+
+        
+        window.onload = function() {
+            checkDate();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dakota Johnson</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: black;">
+  
+    <div class="hero">
+        <h1>❤️ Happy Birthday, Panda! ❤️</h1>
+    </div>
+
+    <div id="countdown"></div>
+    <div id="santhu"></div>
+
+    <div class="memories">
+        <div class="memory" onclick="toggleMemory(1)">
+            <h2>The Funniest Moment</h2>
+            <p id="memory1" class="memory-text">Click to reveal...</p>
+        </div>
+        <div class="memory" onclick="toggleMemory(2)">
+            <h2>My Birthday Wishes</h2>
+            <p id="memory2" class="memory-text">Click to reveal...</p>
+        </div>
+    </div>
+
+    <button onclick="showMessage('Next time avoid telling Shift+Delete, even you are drunk!', 5000)">My message</button>
+    <div id="message" style="display:none;">
+        <p> I'm so grateful to have you in my life. On this special day, I just want you to know how much you mean to me</p>
+    </div>
+
+    <button onclick="startConfetti()">How many times you can hit this button</button>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="background.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+     
+        var today = new Date();
+        var month = today.getMonth(); // 0-based (0 = January)
+        var day = today.getDate();
+
+        if (month !== 0 || day !== 28) {
+            window.location.href = 'index.html'; 
+        }
+
+        function toggleMemory(memoryNumber) {
+            var memoryText = document.getElementById("memory" + memoryNumber);
+            if (memoryText.innerText === "Click to reveal...") {
+                if (memoryNumber === 1) {
+                    memoryText.innerText = "I will never forget the first time we met in the office. When I went out to use the bathroom, I completely lost my way back to our cabin, also no phone with me. After wandering around for 10 minutes, I had to grab an employee Teams app to help me, and finally, you came to the rescue. We couldn't stop laughing afterward. 😅. Do you remember other funny things of that day?";
+                } 
+                else if (memoryNumber === 2) {
+                    memoryText.innerText = "Happy Birthday to the most amazing girl I know. You make the world brighter just by being you, and today, I want to remind you how incredibly beautiful you are inside and out. I hope your day is as special as you are, and that this year brings you everything your heart desires.";
+                } 
+            } else {
+                memoryText.innerText = "Click to reveal...";
+            }
+        }
+    </script>
+</body>
+</html>
