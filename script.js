@@ -1,5 +1,15 @@
 
-var countDownDate = new Date("Jan 28, 2025 00:00:00").getTime();
+const currentYear = new Date().getFullYear();
+var today = new Date();
+var month = today.getMonth(); // 0-based (0 = January)
+var day =  today.getDate();
+
+const nextYear = currentYear + 1;
+if (month === 0 && day <= 28) {
+    nextYear -= 1;
+}
+    
+var countDownDate = new Date("Jan 28, "+ nextYear +" 00:00:00").getTime();
 
 var x = setInterval(function() {
     var now = new Date().getTime();
