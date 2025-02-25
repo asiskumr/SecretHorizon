@@ -15,7 +15,7 @@
         <div id="countdown"></div>
         <div id="countdown-timer"></div>
       
-        <button id="enter-button" onclick="openPage()" disabled>Open</button>
+        <button id="enter-button" onclick="openPage()" >Open</button> // disabled
         <p id="warning-message" style="color: red; display: none;">The secret remains locked🔒! One day, one key...January 28th is the only way in 🔑! ~ Anonymous!</p>
     </div>
 
@@ -29,18 +29,18 @@
 
     <script>
         
-        function checkDate() {
-            var today = new Date();
-            var month = today.getMonth(); // 0-based (0 = January)
-            var day =  today.getDate();
+        // function checkDate() {
+        //     var today = new Date();
+        //     var month = today.getMonth(); // 0-based (0 = January)
+        //     var day =  today.getDate();
 
          
-            if (month === 0 && day === 28) {  
-                document.getElementById('enter-button').disabled = true;
-            } else {
-                document.getElementById('warning-message').style.display = 'block'; 
-            }
-        }
+        //     if (month === 0 && day === 28) {  
+        //         document.getElementById('enter-button').disabled = true;
+        //     } else {
+        //         document.getElementById('warning-message').style.display = 'block'; 
+        //     }
+        // }
 
        
         function openPage() {
@@ -48,9 +48,9 @@
         }
 
         
-        window.onload = function() {
-            checkDate();
-        };
+        // window.onload = function() {
+        //     checkDate();
+        // };
     </script>
 </body>
 </html>
